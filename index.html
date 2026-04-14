@@ -1,646 +1,1565 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sun Fitness Gym — Salem's Premier Fitness Destination</title>
-  <meta name="description" content="Sun Fitness Gym in Salem — No 504 Sankari Main Rd, Kalarampatti. Transform your body and mind with world-class equipment, expert trainers, and a motivating community. Call 092456 60666." />
-  <meta name="keywords" content="gym Salem, fitness Salem, Sun Fitness Gym, Kalarampatti gym, workout Salem Tamil Nadu" />
-  <meta property="og:title" content="Sun Fitness Gym — Salem's Premier Fitness Destination" />
-  <meta property="og:description" content="Join Sun Fitness Gym in Salem. Expert trainers, modern equipment, and a results-driven community." />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Elegant & Premium Serif Stack -->
-  <!-- Cormorant Garamond: ultra-refined display serif for hero titles -->
-  <!-- Playfair Display: classic editorial serif for section headings -->
-  <!-- Jost: geometric humanist for UI labels, nav, buttons -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sun Fitness Gym – Salem's premier fitness destination. Transform your body, elevate your life. Located at Kalarampatti, Sankari Main Rd, Salem.">
+<meta name="keywords" content="gym Salem, fitness Salem, Sun Fitness Gym, workout Salem, bodybuilding Salem, Kalarampatti gym">
+<meta property="og:title" content="Sun Fitness Gym – Salem">
+<meta property="og:description" content="Your transformation starts here. Premier gym at Kalarampatti, Sankari Main Rd, Salem.">
+<title>Sun Fitness Gym | Salem – Kalarampatti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700;1,900&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sun: #FF6B00;
+    --sun-hot: #FF3D00;
+    --gold: #FFB800;
+    --black: #0A0A0A;
+    --charcoal: #1A1A1A;
+    --iron: #2C2C2C;
+    --ash: #5A5A5A;
+    --cream: #F5EFE0;
+    --white: #FAFAFA;
+  }
 
-    :root {
-      --sun: #F5A800;
-      --sun-hot: #FF6B00;
-      --black: #0A0A0A;
-      --charcoal: #141414;
-      --steel: #1E1E1E;
-      --muted: #5A5A5A;
-      --white: #F5F0E8;
-      --off: #D4CFC6;
-      --red: #E8311A;
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-      /* Font families */
-      --font-display: 'Cormorant Garamond', Georgia, serif;   /* Hero titles, big numbers */
-      --font-heading: 'Playfair Display', Georgia, serif;     /* Section titles          */
-      --font-ui:      'Jost', sans-serif;                     /* Nav, labels, buttons    */
-      --font-body:    'Cormorant Garamond', Georgia, serif;   /* Body copy               */
-    }
+  html { scroll-behavior: smooth; }
 
-    html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    background: var(--black);
+    color: var(--cream);
+    overflow-x: hidden;
+    cursor: crosshair;
+  }
 
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: var(--font-body);
-      font-weight: 300;
-      overflow-x: hidden;
-      cursor: none;
-    }
+  /* NOISE TEXTURE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.5;
+  }
 
-    /* Custom Cursor */
-    .cursor {
-      position: fixed;
-      width: 12px; height: 12px;
-      background: var(--sun);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: transform 0.1s, width 0.2s, height 0.2s, background 0.2s;
-      mix-blend-mode: difference;
-    }
-    .cursor-ring {
-      position: fixed;
-      width: 40px; height: 40px;
-      border: 1.5px solid var(--sun);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%, -50%);
-      transition: transform 0.15s ease-out, width 0.3s, height 0.3s, opacity 0.3s;
-      opacity: 0.5;
-    }
+  /* ─── NAVIGATION ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 900;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    background: linear-gradient(180deg, rgba(10,10,10,0.95) 0%, transparent 100%);
+    backdrop-filter: blur(2px);
+    border-bottom: 1px solid rgba(255,107,0,0.15);
+  }
 
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 20px 5vw;
-      background: linear-gradient(to bottom, rgba(10,10,10,0.95) 0%, transparent 100%);
-      backdrop-filter: blur(4px);
-      transition: background 0.4s;
-    }
-    nav.scrolled { background: rgba(10,10,10,0.97); }
+  .nav-logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--sun);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
 
-    .nav-logo {
-      font-family: var(--font-heading);
-      font-size: clamp(1.4rem, 2.8vw, 1.85rem);
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      color: var(--white);
-      text-decoration: none;
-      display: flex; align-items: center; gap: 12px;
-    }
-    .nav-logo .sun-icon {
-      width: 30px; height: 30px;
-      background: radial-gradient(circle, var(--sun) 40%, var(--sun-hot) 100%);
-      border-radius: 50%;
-      box-shadow: 0 0 18px var(--sun), 0 0 36px rgba(245,168,0,0.3);
-      animation: pulse-sun 3s ease-in-out infinite;
-      flex-shrink: 0;
-    }
-    @keyframes pulse-sun {
-      0%,100% { box-shadow: 0 0 18px var(--sun), 0 0 36px rgba(245,168,0,0.3); }
-      50% { box-shadow: 0 0 28px var(--sun), 0 0 56px rgba(245,168,0,0.5); }
-    }
+  .nav-logo span { color: var(--gold); }
 
-    .nav-links { display: flex; gap: 36px; list-style: none; }
-    .nav-links a {
-      font-family: var(--font-ui);
-      font-weight: 400;
-      font-size: 0.78rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--off);
-      text-decoration: none;
-      transition: color 0.2s;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute; bottom: -4px; left: 0;
-      width: 0; height: 1px;
-      background: var(--sun);
-      transition: width 0.3s;
-    }
-    .nav-links a:hover { color: var(--sun); }
-    .nav-links a:hover::after { width: 100%; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
 
-    .nav-cta {
-      font-family: var(--font-ui);
-      font-weight: 600;
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--black);
-      background: var(--sun);
-      border: none;
-      padding: 10px 22px;
-      text-decoration: none;
-      clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
-      transition: background 0.2s, transform 0.2s;
-      cursor: none;
-    }
-    .nav-cta:hover { background: var(--sun-hot); transform: scale(1.04); }
+  .nav-links a {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream);
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+  }
 
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: none; background: none; border: none; }
-    .hamburger span { width: 26px; height: 2px; background: var(--white); transition: 0.3s; }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0; right: 0;
+    height: 1px;
+    background: var(--sun);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
 
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex; align-items: center;
-      padding: 0 5vw;
-      overflow: hidden;
-    }
+  .nav-links a:hover { color: var(--sun); }
+  .nav-links a:hover::after { transform: scaleX(1); }
 
-    .hero-bg {
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 60% 80% at 70% 50%, rgba(245,168,0,0.08) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 40% at 80% 20%, rgba(255,107,0,0.06) 0%, transparent 50%),
-        linear-gradient(160deg, #0A0A0A 0%, #111111 50%, #0D0D0D 100%);
-    }
+  .nav-cta {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--sun);
+    color: var(--black);
+    border: none;
+    padding: 0.65rem 1.6rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
 
-    .hero-grid {
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(245,168,0,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(245,168,0,0.04) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
-    }
+  .nav-cta:hover { background: var(--gold); transform: translateY(-1px); }
 
-    .hero-number {
-      position: absolute;
-      right: 4vw; top: 50%;
-      transform: translateY(-50%);
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 300;
-      font-size: clamp(180px, 28vw, 380px);
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(245,168,0,0.08);
-      line-height: 1;
-      pointer-events: none;
-      user-select: none;
-    }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 2px; background: var(--cream); transition: 0.3s; }
 
-    .hero-content {
-      position: relative; z-index: 2;
-      max-width: 760px;
-    }
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
 
-    .hero-eyebrow {
-      font-family: var(--font-ui);
-      font-weight: 400;
-      font-size: 0.7rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--sun);
-      margin-bottom: 20px;
-      opacity: 0;
-      animation: fade-up 0.8s 0.2s forwards;
-      display: flex; align-items: center; gap: 12px;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      display: block; width: 40px; height: 1px;
-      background: var(--sun);
-    }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 3rem 4rem 3rem;
+    position: relative;
+    z-index: 2;
+  }
 
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(4rem, 11vw, 9.5rem);
-      font-weight: 300;
-      line-height: 0.92;
-      letter-spacing: 0.01em;
-      color: var(--white);
-      opacity: 0;
-      animation: fade-up 0.9s 0.4s forwards;
-    }
-    .hero-title em {
-      font-style: italic;
-      font-weight: 400;
-    }
-    .hero-title .accent { color: var(--sun); font-style: italic; }
-    .hero-title .stroke {
-      -webkit-text-stroke: 1px var(--white);
-      color: transparent;
-      font-style: italic;
-    }
+  .hero-tag {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sun);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
 
-    .hero-sub {
-      font-family: var(--font-body);
-      font-size: clamp(1.1rem, 1.9vw, 1.3rem);
-      font-weight: 300;
-      font-style: italic;
-      line-height: 1.75;
-      color: var(--off);
-      max-width: 500px;
-      margin-top: 28px;
-      opacity: 0;
-      animation: fade-up 0.9s 0.6s forwards;
-    }
+  .hero-tag::before {
+    content: '';
+    width: 30px; height: 1px;
+    background: var(--sun);
+  }
 
-    .hero-actions {
-      display: flex; flex-wrap: wrap; gap: 16px;
-      margin-top: 40px;
-      opacity: 0;
-      animation: fade-up 0.9s 0.8s forwards;
-    }
+  .hero-h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: clamp(3.5rem, 7vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.4s forwards;
+  }
 
-    .btn-primary {
-      font-family: var(--font-ui);
-      font-weight: 600;
-      font-size: 0.76rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--black);
-      background: var(--sun);
-      border: none;
-      padding: 16px 36px;
-      text-decoration: none;
-      clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
-      transition: background 0.25s, transform 0.2s;
-      cursor: none;
-    }
-    .btn-primary:hover { background: var(--sun-hot); transform: translateY(-2px); }
+  .hero-h1 .accent { color: var(--sun); display: block; }
+  .hero-h1 .gold-txt { color: var(--gold); }
 
-    .btn-outline {
-      font-family: var(--font-ui);
-      font-weight: 400;
-      font-size: 0.76rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--white);
-      background: transparent;
-      border: 1px solid rgba(245,240,232,0.3);
-      padding: 16px 36px;
-      text-decoration: none;
-      clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
-      transition: border-color 0.25s, color 0.25s, transform 0.2s;
-      cursor: none;
-    }
-    .btn-outline:hover { border-color: var(--sun); color: var(--sun); transform: translateY(-2px); }
+  .hero-sub {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ash);
+    max-width: 380px;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.6s forwards;
+  }
 
-    .hero-stats {
-      display: flex; gap: 40px; flex-wrap: wrap;
-      margin-top: 60px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(245,240,232,0.1);
-      opacity: 0;
-      animation: fade-up 0.9s 1s forwards;
-    }
-    .stat-item { }
-    .stat-num {
-      font-family: var(--font-display);
-      font-weight: 300;
-      font-size: 3rem;
-      color: var(--sun);
-      line-height: 1;
-    }
-    .stat-label {
-      font-family: var(--font-ui);
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 6px;
-    }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.8s forwards;
+  }
 
-    .scroll-hint {
-      position: absolute; bottom: 40px; left: 5vw;
-      display: flex; align-items: center; gap: 12px;
-      font-family: var(--font-ui);
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--muted);
-      opacity: 0;
-      animation: fade-up 1s 1.3s forwards;
-    }
-    .scroll-line {
-      width: 50px; height: 1px;
-      background: linear-gradient(to right, transparent, var(--muted));
-      position: relative; overflow: hidden;
-    }
-    .scroll-line::after {
-      content: '';
-      position: absolute; top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: var(--sun);
-      animation: scan 2s 1.5s ease-in-out infinite;
-    }
-    @keyframes scan { 0% { left: -100%; } 100% { left: 100%; } }
+  .btn-primary {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--sun);
+    color: var(--black);
+    border: none;
+    padding: 1rem 2.4rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  }
 
-    @keyframes fade-up {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  .btn-primary:hover { background: var(--gold); transform: translateY(-2px); }
 
-    /* MARQUEE */
-    .marquee-wrap {
-      background: var(--sun);
-      padding: 14px 0;
-      overflow: hidden;
-      position: relative;
-      z-index: 2;
-    }
-    .marquee-track {
-      display: flex;
-      gap: 0;
-      white-space: nowrap;
-      animation: marquee 22s linear infinite;
-    }
-    .marquee-item {
-      font-family: var(--font-heading);
-      font-style: italic;
-      font-size: 1.05rem;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      color: var(--black);
-      padding: 0 40px;
-      display: flex; align-items: center; gap: 20px;
-    }
-    .marquee-dot { width: 6px; height: 6px; background: var(--black); border-radius: 50%; opacity: 0.4; }
-    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .btn-outline {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid rgba(245,239,224,0.3);
+    padding: 1rem 2.4rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, color 0.2s;
+  }
 
-    /* SECTION SHARED */
-    section { padding: clamp(60px, 10vw, 120px) 5vw; }
+  .btn-outline:hover { border-color: var(--sun); color: var(--sun); }
 
-    .section-label {
-      font-family: var(--font-ui);
-      font-weight: 400;
-      font-size: 0.65rem;
-      letter-spacing: 0.38em;
-      text-transform: uppercase;
-      color: var(--sun);
-      margin-bottom: 16px;
-      display: flex; align-items: center; gap: 12px;
-    }
-    .section-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--sun); }
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255,107,0,0.2);
+    opacity: 0;
+    animation: fadeUp 0.9s 1s forwards;
+  }
 
-    .section-title {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: clamp(2.6rem, 5.5vw, 5rem);
-      line-height: 1;
-      letter-spacing: 0.01em;
-    }
+  .stat-num {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2.2rem;
+    color: var(--sun);
+    line-height: 1;
+  }
 
-    /* ABOUT */
-    #about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(40px, 8vw, 100px);
-      align-items: center;
-    }
-    .about-left { }
-    .about-desc {
-      font-family: var(--font-body);
-      font-size: 1.15rem;
-      font-style: italic;
-      line-height: 1.85;
-      color: var(--off);
-      margin-top: 28px;
-      max-width: 480px;
-    }
-    .about-features {
-      display: flex; flex-direction: column; gap: 16px;
-      margin-top: 36px;
-    }
-    .about-feat {
-      display: flex; align-items: center; gap: 16px;
-      padding: 16px 20px;
-      border: 1px solid rgba(245,240,232,0.07);
-      background: rgba(255,255,255,0.02);
-      transition: border-color 0.3s, background 0.3s;
-      cursor: default;
-    }
-    .about-feat:hover { border-color: rgba(245,168,0,0.3); background: rgba(245,168,0,0.04); }
-    .feat-icon {
-      width: 40px; height: 40px;
-      background: linear-gradient(135deg, var(--sun), var(--sun-hot));
-      clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-    .feat-text strong {
-      display: block;
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 0.04em;
-      color: var(--white);
-    }
-    .feat-text span {
-      font-family: var(--font-ui);
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
+  .stat-label {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ash);
+    margin-top: 0.3rem;
+    font-style: italic;
+  }
 
-    .about-right {
-      position: relative;
-    }
-    .about-visual {
-      position: relative;
-      aspect-ratio: 4/5;
-      background: var(--steel);
-      overflow: hidden;
-    }
-    .about-visual-inner {
-      width: 100%; height: 100%;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 30%, rgba(245,168,0,0.15) 0%, transparent 70%),
-        linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 20px;
-    }
-    .gym-icon-big {
-      font-size: 6rem;
-      opacity: 0.15;
-    }
-    .about-tag {
-      position: absolute;
-      bottom: -20px; right: -20px;
-      background: var(--sun);
-      padding: 20px 28px;
-      clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
-    }
-    .about-tag strong {
-      font-family: var(--font-display);
-      font-weight: 300;
-      font-size: 2.6rem;
-      color: var(--black);
-      line-height: 1;
-      display: block;
-    }
-    .about-tag span {
-      font-family: var(--font-ui);
-      font-size: 0.65rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(10,10,10,0.7);
-    }
-    .about-deco {
-      position: absolute;
-      top: -20px; left: -20px;
-      width: 80px; height: 80px;
-      border-top: 3px solid var(--sun);
-      border-left: 3px solid var(--sun);
-    }
+  /* HERO RIGHT – visual panel */
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
 
-    /* SERVICES */
-    #services { background: var(--charcoal); }
-    .services-header {
-      display: flex; justify-content: space-between; align-items: flex-end;
-      margin-bottom: 60px;
-      flex-wrap: wrap; gap: 20px;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2px;
-    }
-    .service-card {
-      background: var(--steel);
-      padding: 40px 32px;
-      position: relative;
-      overflow: hidden;
-      cursor: default;
-      transition: background 0.3s;
-    }
-    .service-card::before {
-      content: '';
-      position: absolute; bottom: 0; left: 0;
-      width: 100%; height: 3px;
-      background: linear-gradient(to right, var(--sun), var(--sun-hot));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-    .service-card:hover::before { transform: scaleX(1); }
-    .service-card:hover { background: #232323; }
+  .hero-visual {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(255,107,0,0.08) 0%, transparent 50%),
+      linear-gradient(45deg, #0A0A0A 0%, #1A1A1A 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .service-num {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 300;
-      font-size: 3.5rem;
-      color: rgba(245,168,0,0.1);
-      line-height: 1;
-      position: absolute; top: 20px; right: 24px;
-    }
-    .service-icon-wrap {
-      width: 52px; height: 52px;
-      border: 1px solid rgba(245,168,0,0.25);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 24px;
-      transition: border-color 0.3s, background 0.3s;
-    }
-    .service-card:hover .service-icon-wrap { border-color: var(--sun); background: rgba(245,168,0,0.08); }
-    .service-name {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: 0.03em;
-      color: var(--white);
-      margin-bottom: 12px;
-    }
-    .service-desc {
-      font-family: var(--font-body);
-      font-size: 1rem;
-      font-style: italic;
-      line-height: 1.75;
-      color: var(--muted);
-    }
+  .hero-emblem {
+    position: relative;
+    width: 420px;
+    height: 420px;
+    opacity: 0;
+    animation: rotateFadeIn 1.2s 0.5s forwards;
+  }
 
-    /* PRICING */
-    #pricing { }
-    .pricing-header { text-align: center; margin-bottom: 60px; }
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .price-card {
-      background: var(--steel);
-      border: 1px solid rgba(245,240,232,0.07);
-      padding: 40px 32px;
-      position: relative;
-      transition: transform 0.3s, border-color 0.3s;
-      cursor: default;
-    }
-    .price-card:hover { transform: translateY(-6px); border-color: rgba(245,168,0,0.25); }
-    .price-card.featured {
-      border-color: var(--sun);
-      background: linear-gradient(160deg, #1E1E1E 0%, #1a1600 100%);
-    }
-    .price-badge {
-      position: absolute; top: -1px; right: 32px;
-      background: var(--sun);
-      color: var(--black);
-      font-family: var(--font-ui);
-      font-weight: 600;
-      font-size: 0.6rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      padding: 6px 14px;
-    }
-    .price-plan {
-      font-family: var(--font-ui);
-      font-weight: 400;
-      font-size: 0.68rem;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--sun);
-      margin-bottom: 16px;
-    }
-    .price-amount {
-      font-family: var(--font-display);
-      font-weight: 300;
-      font-size: 4.2rem;
-      line-height: 1;
-      color: var(--white);
-      margin-bottom: 6px;
-    }
-    .price-amount span {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      color: var(--muted);
-      vertical-align: top;
-      margin-top: 10px;
-      display: inline-block;
-    }
-    .price-period {
-      font-family: var(--font-ui);
-      font-size: 0.76rem;
-      color: var(--muted);
-      margin-bottom: 32px;
-      letter-spacing: 0.1em;
-    }
-    .price-perks { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
-    .price-perks li {
-      font-family: var(--font-body);
-      font-size: 1rem;
-      color: var(--off);
-      display: flex; align-items: center; gap: 10px;
-    }
-    .price-perks li::before { content: '✓'; color: var(--sun); font-weight: 700; font-size: 0.85rem; }
-    .price-perks li.no { color: var(--muted); }
-    .price-perks li.no::before { content: '—'; color: var(--muted); }
+  .hero-emblem svg { width: 100%; height: 100%; }
 
-    .btn-plan {
-      display: block; width: 100%; text-align: center;
-      font-family: var(--font-ui);
-      font-weight: 600;
-      font-size: 0.72rem;
-      letter-spacing:
+  /* Large decorative text */
+  .hero-bg-text {
+    position: absolute;
+    bottom: -2rem;
+    right: -2rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: clamp(8rem, 15vw, 14rem);
+    color: rgba(255,107,0,0.04);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  /* ─── MARQUEE ─── */
+  .marquee-wrap {
+    background: var(--sun);
+    padding: 0.9rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee-track {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+  }
+
+  .marquee-track span {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--black);
+    margin: 0 2rem;
+  }
+
+  .marquee-track .dot {
+    color: var(--black);
+    opacity: 0.4;
+    font-size: 1.2rem;
+    vertical-align: middle;
+  }
+
+  /* ─── ABOUT ─── */
+  #about {
+    padding: 7rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .about-label {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sun);
+    margin-bottom: 1.2rem;
+  }
+
+  .section-h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 1.8rem;
+  }
+
+  .section-h2 em { color: var(--sun); font-style: italic; }
+
+  .section-body {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--ash);
+    font-style: italic;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    background: var(--charcoal);
+    border: 1px solid rgba(255,107,0,0.12);
+    padding: 1.8rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--sun);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s;
+  }
+
+  .feature-card:hover { border-color: rgba(255,107,0,0.4); transform: translateY(-4px); }
+  .feature-card:hover::before { transform: scaleY(1); }
+
+  .card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+
+  .card-text {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: var(--ash);
+    font-style: italic;
+  }
+
+  /* ─── PROGRAMS ─── */
+  #programs {
+    background: var(--charcoal);
+    padding: 7rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #programs::before {
+    content: 'TRAIN';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: clamp(10rem, 20vw, 18rem);
+    color: rgba(255,107,0,0.03);
+    pointer-events: none;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  .programs-inner { max-width: 1300px; margin: 0 auto; position: relative; z-index: 2; }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .prog-card {
+    background: var(--iron);
+    border: 1px solid rgba(255,107,0,0.08);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+    cursor: default;
+  }
+
+  .prog-card:hover { transform: translateY(-6px); border-color: rgba(255,107,0,0.35); }
+
+  .prog-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,107,0,0.06) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .prog-card:hover::after { opacity: 1; }
+
+  .prog-num {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 3.5rem;
+    color: rgba(255,107,0,0.12);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .prog-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+
+  .prog-desc {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--ash);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+
+  .prog-tag {
+    display: inline-block;
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sun);
+    border: 1px solid rgba(255,107,0,0.3);
+    padding: 0.3rem 0.8rem;
+  }
+
+  /* ─── PRICING ─── */
+  #pricing {
+    padding: 7rem 3rem;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .price-card {
+    background: var(--charcoal);
+    border: 1px solid rgba(255,107,0,0.12);
+    padding: 3rem 2.5rem;
+    position: relative;
+    transition: transform 0.3s;
+  }
+
+  .price-card.featured {
+    background: var(--sun);
+    border-color: var(--sun);
+    transform: scale(1.04);
+  }
+
+  .price-card:not(.featured):hover { transform: translateY(-4px); }
+
+  .price-badge {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--gold);
+    color: var(--black);
+    padding: 0.3rem 0.8rem;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+
+  .price-plan {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .price-card.featured .price-plan { color: var(--black); }
+
+  .price-amount {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 3rem;
+    color: var(--sun);
+    line-height: 1;
+    margin: 1rem 0;
+  }
+
+  .price-card.featured .price-amount { color: var(--black); }
+
+  .price-period {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.8rem;
+    color: var(--ash);
+    font-style: italic;
+  }
+
+  .price-card.featured .price-period { color: rgba(10,10,10,0.6); }
+
+  .price-divider {
+    height: 1px;
+    background: rgba(255,107,0,0.2);
+    margin: 1.5rem 0;
+  }
+
+  .price-card.featured .price-divider { background: rgba(10,10,10,0.2); }
+
+  .price-features {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+
+  .price-features li {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--ash);
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .price-card.featured .price-features li { color: rgba(10,10,10,0.75); }
+
+  .price-features li::before {
+    content: '→';
+    color: var(--sun);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .price-card.featured .price-features li::before { color: var(--black); }
+
+  .btn-plan {
+    width: 100%;
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 1rem;
+    border: 1px solid rgba(255,107,0,0.3);
+    background: transparent;
+    color: var(--cream);
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+
+  .btn-plan:hover { background: var(--sun); border-color: var(--sun); color: var(--black); }
+
+  .btn-plan.dark {
+    background: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+  }
+
+  .btn-plan.dark:hover { background: var(--charcoal); }
+
+  /* ─── TESTIMONIALS ─── */
+  #testimonials {
+    background: var(--charcoal);
+    padding: 7rem 3rem;
+  }
+
+  .test-inner { max-width: 1300px; margin: 0 auto; }
+
+  .test-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .test-card {
+    background: var(--iron);
+    border: 1px solid rgba(255,107,0,0.08);
+    padding: 2.5rem 2rem;
+    position: relative;
+  }
+
+  .test-quote {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 4rem;
+    color: var(--sun);
+    line-height: 0.6;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+    font-style: italic;
+  }
+
+  .test-text {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--cream);
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+
+  .test-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .test-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sun), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--black);
+    flex-shrink: 0;
+  }
+
+  .test-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--white);
+  }
+
+  .test-since {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.7rem;
+    color: var(--ash);
+    font-style: italic;
+  }
+
+  .stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 2px; margin-top: 0.2rem; }
+
+  /* ─── LOCATION ─── */
+  #location {
+    padding: 7rem 3rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .loc-info-item {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+  }
+
+  .loc-icon {
+    width: 42px; height: 42px;
+    background: rgba(255,107,0,0.12);
+    border: 1px solid rgba(255,107,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    color: var(--sun);
+  }
+
+  .loc-detail-label {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sun);
+    margin-bottom: 0.3rem;
+  }
+
+  .loc-detail-val {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.88rem;
+    color: var(--cream);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .map-placeholder {
+    background: var(--charcoal);
+    border: 1px solid rgba(255,107,0,0.15);
+    height: 380px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map-placeholder iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(0.4) contrast(1.05);
+  }
+
+  .map-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border: 2px solid rgba(255,107,0,0.3);
+  }
+
+  /* ─── CTA STRIP ─── */
+  #cta {
+    background: var(--sun);
+    padding: 5rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 20px,
+      rgba(0,0,0,0.04) 20px,
+      rgba(0,0,0,0.04) 21px
+    );
+  }
+
+  .cta-inner { position: relative; z-index: 2; }
+
+  .cta-h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: var(--black);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  .cta-sub {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1rem;
+    font-style: italic;
+    color: rgba(10,10,10,0.7);
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-phone {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--black);
+    margin-bottom: 2rem;
+    display: block;
+    text-decoration: none;
+  }
+
+  .cta-phone:hover { text-decoration: underline; }
+
+  .btn-cta-dark {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 1.1rem 3rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s;
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+  }
+
+  .btn-cta-dark:hover { background: var(--charcoal); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--black);
+    border-top: 1px solid rgba(255,107,0,0.12);
+    padding: 3.5rem 3rem 2rem;
+  }
+
+  .footer-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,107,0,0.1);
+    margin-bottom: 2rem;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--sun);
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  .footer-tagline {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--ash);
+    line-height: 1.6;
+  }
+
+  .footer-col-title {
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sun);
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-links { list-style: none; }
+
+  .footer-links li {
+    margin-bottom: 0.6rem;
+  }
+
+  .footer-links a {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--ash);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--sun); }
+
+  .footer-bottom {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-copy {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.72rem;
+    font-style: italic;
+    color: var(--ash);
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes rotateFadeIn {
+    from { opacity: 0; transform: rotate(-15deg) scale(0.9); }
+    to { opacity: 1; transform: rotate(0deg) scale(1); }
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes sunPulse {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes spinSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Scroll-reveal utility */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.75s, transform 0.75s;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    #hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { display: none; }
+    .hero-left { padding: 7rem 2rem 4rem; }
+    #about { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2rem; }
+    .programs-grid { grid-template-columns: 1fr 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .price-card.featured { transform: none; }
+    .test-grid { grid-template-columns: 1fr 1fr; }
+    #location { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2rem; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .hero-left { padding: 6rem 1.5rem 3.5rem; }
+    .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+    .about-right { grid-template-columns: 1fr; }
+    #programs { padding: 5rem 1.5rem; }
+    .programs-grid { grid-template-columns: 1fr; }
+    .test-grid { grid-template-columns: 1fr; }
+    #pricing { padding: 5rem 1.5rem; }
+    #cta { padding: 4rem 1.5rem; }
+    footer { padding: 2.5rem 1.5rem 1.5rem; }
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+
+  /* Mobile nav overlay */
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10,10,10,0.97);
+    z-index: 800;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .mobile-nav.open { display: flex; }
+
+  .mobile-nav a {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--cream);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .mobile-nav a:hover { color: var(--sun); }
+
+  .mobile-close {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    background: none; border: none;
+    color: var(--cream);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" onclick="toggleMobileNav()">✕</button>
+  <a href="#about" onclick="toggleMobileNav()">About</a>
+  <a href="#programs" onclick="toggleMobileNav()">Programs</a>
+  <a href="#pricing" onclick="toggleMobileNav()">Pricing</a>
+  <a href="#testimonials" onclick="toggleMobileNav()">Reviews</a>
+  <a href="#location" onclick="toggleMobileNav()">Location</a>
+  <a href="tel:+919245660666" style="color:var(--sun);">Call Now</a>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+  <a class="nav-logo" href="#">Sun <span>Fitness</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#location">Location</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('location').scrollIntoView({behavior:'smooth'})">
+    Join Today
+  </button>
+  <div class="hamburger" onclick="toggleMobileNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Salem's Premier Gym · Est. in Kalarampatti</div>
+    <h1 class="hero-h1">
+      <span class="accent">Forge</span>
+      Your <span class="gold-txt">Strength.</span><br>
+      Own Your<br>Future.
+    </h1>
+    <p class="hero-sub">
+      <em>Sun Fitness Gym</em> — where iron meets ambition.
+      Expert trainers, world-class equipment & a community that pushes you beyond limits.
+    </p>
+    <div class="hero-actions">
+      <a href="#pricing" class="btn-primary">Start Training</a>
+      <a href="tel:+919245660666" class="btn-outline">Call: 092456 60666</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Active Members</div>
+      </div>
+      <div>
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Expert Trainers</div>
+      </div>
+      <div>
+        <div class="stat-num">6 AM</div>
+        <div class="stat-label">Opens Daily</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-emblem">
+        <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer rotating ring -->
+          <g style="transform-origin: 210px 210px; animation: spinSlow 30s linear infinite;">
+            <circle cx="210" cy="210" r="195" fill="none" stroke="rgba(255,107,0,0.15)" stroke-width="1" stroke-dasharray="8 6"/>
+          </g>
+          <!-- Middle ring -->
+          <circle cx="210" cy="210" r="165" fill="none" stroke="rgba(255,107,0,0.08)" stroke-width="1"/>
+          <!-- Inner circle bg -->
+          <circle cx="210" cy="210" r="140" fill="rgba(26,26,26,0.9)"/>
+          <circle cx="210" cy="210" r="140" fill="none" stroke="rgba(255,107,0,0.25)" stroke-width="2"/>
+          <!-- Sun rays -->
+          <g style="transform-origin: 210px 210px; animation: spinSlow 60s linear infinite reverse; opacity: 0.6;">
+            <line x1="210" y1="55" x2="210" y2="80" stroke="#FF6B00" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="210" y1="340" x2="210" y2="365" stroke="#FF6B00" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="55" y1="210" x2="80" y2="210" stroke="#FF6B00" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="340" y1="210" x2="365" y2="210" stroke="#FF6B00" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="96" y1="96" x2="114" y2="114" stroke="#FF6B00" stroke-width="2" stroke-linecap="round"/>
+            <line x1="306" y1="306" x2="324" y2="324" stroke="#FF6B00" stroke-width="2" stroke-linecap="round"/>
+            <line x1="96" y1="324" x2="114" y2="306" stroke="#FF6B00" stroke-width="2" stroke-linecap="round"/>
+            <line x1="306" y1="114" x2="324" y2="96" stroke="#FF6B00" stroke-width="2" stroke-linecap="round"/>
+          </g>
+          <!-- SUN text -->
+          <text x="210" y="190" text-anchor="middle"
+            font-family="Georgia, serif" font-weight="900"
+            font-style="italic" font-size="78" fill="#FF6B00"
+            style="animation: sunPulse 3s ease-in-out infinite;">SUN</text>
+          <!-- FITNESS text -->
+          <text x="210" y="235" text-anchor="middle"
+            font-family="'Courier New', monospace" font-weight="700"
+            font-style="italic" font-size="22" fill="#F5EFE0" letter-spacing="10">FITNESS</text>
+          <!-- Dumbbell icon -->
+          <g transform="translate(210,270)" fill="#FF6B00" opacity="0.8">
+            <rect x="-38" y="-5" width="76" height="10" rx="3"/>
+            <rect x="-50" y="-12" width="16" height="24" rx="4"/>
+            <rect x="34" y="-12" width="16" height="24" rx="4"/>
+            <rect x="-58" y="-8" width="10" height="16" rx="2"/>
+            <rect x="48" y="-8" width="10" height="16" rx="2"/>
+          </g>
+          <!-- SALEM label -->
+          <text x="210" y="310" text-anchor="middle"
+            font-family="'Courier New', monospace" font-weight="700"
+            font-style="italic" font-size="11" fill="#FFB800" letter-spacing="6">SALEM</text>
+          <!-- Corner tick marks -->
+          <line x1="210" y1="70" x2="210" y2="85" stroke="rgba(255,184,0,0.5)" stroke-width="1.5"/>
+          <line x1="210" y1="335" x2="210" y2="350" stroke="rgba(255,184,0,0.5)" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="hero-bg-text">GYM</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MARQUEE ─── -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Strength Training</span><span class="dot">◆</span>
+    <span>Cardio & HIIT</span><span class="dot">◆</span>
+    <span>Personal Training</span><span class="dot">◆</span>
+    <span>Body Transformation</span><span class="dot">◆</span>
+    <span>Weight Loss</span><span class="dot">◆</span>
+    <span>Muscle Building</span><span class="dot">◆</span>
+    <span>Yoga & Flexibility</span><span class="dot">◆</span>
+    <span>Nutrition Guidance</span><span class="dot">◆</span>
+    <span>Zumba & Dance</span><span class="dot">◆</span>
+    <span>Open 6 AM – 10 PM</span><span class="dot">◆</span>
+    <!-- duplicate for seamless loop -->
+    <span>Strength Training</span><span class="dot">◆</span>
+    <span>Cardio & HIIT</span><span class="dot">◆</span>
+    <span>Personal Training</span><span class="dot">◆</span>
+    <span>Body Transformation</span><span class="dot">◆</span>
+    <span>Weight Loss</span><span class="dot">◆</span>
+    <span>Muscle Building</span><span class="dot">◆</span>
+    <span>Yoga & Flexibility</span><span class="dot">◆</span>
+    <span>Nutrition Guidance</span><span class="dot">◆</span>
+    <span>Zumba & Dance</span><span class="dot">◆</span>
+    <span>Open 6 AM – 10 PM</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="reveal">
+    <div class="about-label">Who We Are</div>
+    <h2 class="section-h2">Salem's Most <em>Dedicated</em><br>Fitness Community</h2>
+    <p class="section-body">
+      Located in the heart of Kalarampatti on Sankari Main Road, Sun Fitness Gym has been Salem's go-to destination for fitness transformation. We combine state-of-the-art equipment with expert coaching and a relentlessly motivating environment.
+    </p>
+    <p class="section-body">
+      Whether you're a complete beginner or a seasoned athlete, our trainers design personalised programs to meet you exactly where you are — and take you far beyond.
+    </p>
+    <a href="tel:+919245660666" class="btn-primary" style="margin-top:1rem;">Call: 092456 60666</a>
+  </div>
+  <div class="about-right reveal">
+    <div class="feature-card">
+      <div class="card-icon">🏋️</div>
+      <div class="card-title">Pro Equipment</div>
+      <div class="card-text">Free weights, cable machines, cardio stations — everything you need under one roof.</div>
+    </div>
+    <div class="feature-card">
+      <div class="card-icon">👨‍🏫</div>
+      <div class="card-title">Expert Trainers</div>
+      <div class="card-text">Certified coaches with proven results. Your goals become their mission.</div>
+    </div>
+    <div class="feature-card">
+      <div class="card-icon">🔥</div>
+      <div class="card-title">Group Classes</div>
+      <div class="card-text">HIIT, Zumba, Yoga and more — energising group sessions that make fitness fun.</div>
+    </div>
+    <div class="feature-card">
+      <div class="card-icon">🥗</div>
+      <div class="card-title">Diet Guidance</div>
+      <div class="card-text">Personalised nutrition plans to fuel performance and accelerate results.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROGRAMS ─── -->
+<section id="programs">
+  <div class="programs-inner">
+    <div class="section-header reveal">
+      <div class="about-label" style="display:inline-block;">What We Offer</div>
+      <h2 class="section-h2" style="margin-bottom:0;">Training <em>Programs</em></h2>
+    </div>
+    <div class="programs-grid">
+      <div class="prog-card reveal">
+        <div class="prog-num">01</div>
+        <div class="prog-name">Strength & Powerlifting</div>
+        <div class="prog-desc">Build raw, functional strength. Our structured powerlifting program is designed for both beginners and advanced lifters targeting peak performance.</div>
+        <span class="prog-tag">All Levels</span>
+      </div>
+      <div class="prog-card reveal">
+        <div class="prog-num">02</div>
+        <div class="prog-name">Cardio & Fat Burn</div>
+        <div class="prog-desc">High-intensity interval training and steady-state cardio protocols engineered to torch calories and boost cardiovascular endurance fast.</div>
+        <span class="prog-tag">Daily Sessions</span>
+      </div>
+      <div class="prog-card reveal">
+        <div class="prog-num">03</div>
+        <div class="prog-name">Body Transformation</div>
+        <div class="prog-desc">12-week personalised programs combining training, nutrition, and accountability coaching for dramatic, sustainable body composition changes.</div>
+        <span class="prog-tag">12 Weeks</span>
+      </div>
+      <div class="prog-card reveal">
+        <div class="prog-num">04</div>
+        <div class="prog-name">Yoga & Flexibility</div>
+        <div class="prog-desc">Recover faster, move better, stress less. Our yoga and mobility classes complement any training goal and improve overall wellbeing.</div>
+        <span class="prog-tag">Morning & Evening</span>
+      </div>
+      <div class="prog-card reveal">
+        <div class="prog-num">05</div>
+        <div class="prog-name">Personal Training</div>
+        <div class="prog-desc">One-on-one sessions with certified coaches who tailor every set, rep, and meal plan specifically to your body type and ambitions.</div>
+        <span class="prog-tag">1-on-1</span>
+      </div>
+      <div class="prog-card reveal">
+        <div class="prog-num">06</div>
+        <div class="prog-name">Zumba & Dance Fitness</div>
+        <div class="prog-desc">Burn calories while having a blast. High-energy dance workouts that feel less like exercise and more like a celebration.</div>
+        <span class="prog-tag">Group Class</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING ─── -->
+<section id="pricing">
+  <div class="section-header reveal">
+    <div class="about-label" style="display:inline-block;">Membership Plans</div>
+    <h2 class="section-h2" style="margin-bottom:0;">Invest in <em>Yourself</em></h2>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card reveal">
+      <div class="price-plan">Basic</div>
+      <div class="price-amount">₹699</div>
+      <div class="price-period">per month</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li>Gym floor access</li>
+        <li>Cardio equipment</li>
+        <li>Free weight area</li>
+        <li>Locker room access</li>
+        <li>Open hours: 6 AM – 10 PM</li>
+      </ul>
+      <a href="tel:+919245660666" class="btn-plan">Get Started</a>
+    </div>
+    <div class="price-card featured reveal">
+      <div class="price-badge">★ Most Popular</div>
+      <div class="price-plan">Pro</div>
+      <div class="price-amount">₹1,199</div>
+      <div class="price-period">per month</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li>Everything in Basic</li>
+        <li>All group classes</li>
+        <li>1 personal training session</li>
+        <li>Diet consultation</li>
+        <li>Body assessment</li>
+        <li>Priority equipment access</li>
+      </ul>
+      <a href="tel:+919245660666" class="btn-plan dark">Join Pro</a>
+    </div>
+    <div class="price-card reveal">
+      <div class="price-plan">Elite</div>
+      <div class="price-amount">₹1,999</div>
+      <div class="price-period">per month</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li>Everything in Pro</li>
+        <li>Unlimited PT sessions</li>
+        <li>Custom meal planning</li>
+        <li>Monthly body scan</li>
+        <li>Supplement guidance</li>
+        <li>VIP locker access</li>
+      </ul>
+      <a href="tel:+919245660666" class="btn-plan">Go Elite</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section id="testimonials">
+  <div class="test-inner">
+    <div class="section-header reveal">
+      <div class="about-label" style="display:inline-block;">Member Stories</div>
+      <h2 class="section-h2" style="margin-bottom:0;">Real People, <em>Real Results</em></h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="test-quote">"</div>
+        <p class="test-text">Sun Fitness completely changed my life. In 6 months I lost 18 kg and gained the confidence I never thought I'd have. The trainers here genuinely care about your progress.</p>
+        <div class="test-author">
+          <div class="test-avatar">A</div>
+          <div>
+            <div class="test-name">Arun Kumar</div>
+            <div class="test-since">Member since 2023</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-quote">"</div>
+        <p class="test-text">Best gym in Salem, no contest. The equipment is always in great condition, the place is clean, and the coaches push you just the right amount. Highly recommend the Pro plan.</p>
+        <div class="test-author">
+          <div class="test-avatar">P</div>
+          <div>
+            <div class="test-name">Priya Lakshmi</div>
+            <div class="test-since">Member since 2022</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-quote">"</div>
+        <p class="test-text">I joined for the Zumba classes and stayed for everything else! The vibe here is incredible. Morning sessions with the trainers are unbeatable. Worth every rupee.</p>
+        <div class="test-author">
+          <div class="test-avatar">S</div>
+          <div>
+            <div class="test-name">Sangeetha R.</div>
+            <div class="test-since">Member since 2024</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LOCATION ─── -->
+<section id="location">
+  <div class="reveal">
+    <div class="about-label">Find Us</div>
+    <h2 class="section-h2">We're Right<br>in <em>Your Neighbourhood</em></h2>
+
+    <div class="loc-info-item">
+      <div class="loc-icon">📍</div>
+      <div>
+        <div class="loc-detail-label">Address</div>
+        <div class="loc-detail-val">No 504 Kalarampattki,<br>Sankari Main Rd, Kalarampatti,<br>Salem, Tamil Nadu 636015</div>
+      </div>
+    </div>
+    <div class="loc-info-item">
+      <div class="loc-icon">📞</div>
+      <div>
+        <div class="loc-detail-label">Phone</div>
+        <div class="loc-detail-val"><a href="tel:+919245660666" style="color:var(--sun);text-decoration:none;">092456 60666</a></div>
+      </div>
+    </div>
+    <div class="loc-info-item">
+      <div class="loc-icon">🕐</div>
+      <div>
+        <div class="loc-detail-label">Hours</div>
+        <div class="loc-detail-val">Monday – Saturday: 6:00 AM – 10:00 PM<br>Sunday: 6:00 AM – 8:00 PM</div>
+      </div>
+    </div>
+    <div class="loc-info-item">
+      <div class="loc-icon">🗺️</div>
+      <div>
+        <div class="loc-detail-label">Plus Code</div>
+        <div class="loc-detail-val">J5R6+MQ Salem, Tamil Nadu</div>
+      </div>
+    </div>
+    <a href="https://maps.google.com/?q=Sun+Fitness+Gym+Kalarampatti+Salem" target="_blank" rel="noopener" class="btn-primary" style="margin-top:1.5rem;">Get Directions →</a>
+  </div>
+
+  <div class="reveal">
+    <div class="map-placeholder">
+      <iframe
+        src="https://maps.google.com/maps?q=11.6340,78.0730&z=15&output=embed"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Sun Fitness Gym Location">
+      </iframe>
+      <div class="map-overlay"></div>
+    </div>
+    <p style="font-family:'Courier Prime',monospace;font-style:italic;font-size:0.75rem;color:var(--ash);margin-top:0.8rem;text-align:center;">
+      No 504 Kalarampattki, Sankari Main Rd · Salem 636015
+    </p>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section id="cta">
+  <div class="cta-inner">
+    <h2 class="cta-h2">Your Transformation<br>Starts <em>Today.</em></h2>
+    <p class="cta-sub">Don't wait for Monday. Don't wait for perfect. Start now.</p>
+    <a href="tel:+919245660666" class="cta-phone">📞 092456 60666</a>
+    <br>
+    <a href="https://maps.google.com/?q=Sun+Fitness+Gym+Kalarampatti+Salem" target="_blank" rel="noopener" class="btn-cta-dark">
+      Visit Us at Kalarampatti
+    </a>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Sun <span>Fitness</span></div>
+      <p class="footer-tagline">
+        Salem's premier fitness destination.<br>
+        No 504 Kalarampattki, Sankari Main Rd,<br>
+        Kalarampatti, Salem – 636015
+      </p>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#pricing">Membership</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#location">Location</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:+919245660666">092456 60666</a></li>
+        <li><a href="#location">Get Directions</a></li>
+        <li><a href="#">Mon–Sat: 6AM–10PM</a></li>
+        <li><a href="#">Sun: 6AM–8PM</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Sun Fitness Gym, Salem. All rights reserved.</div>
+    <div class="footer-copy">Kalarampatti · Sankari Main Road · Salem, TN 636015</div>
+  </div>
+</footer>
+
+<script>
+  // Mobile Nav Toggle
+  function toggleMobileNav() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+  }
+
+  // Scroll Reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Nav scroll effect
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      nav.style.background = 'rgba(10,10,10,0.97)';
+      nav.style.borderBottomColor = 'rgba(255,107,0,0.2)';
+    } else {
+      nav.style.background = '';
+      nav.style.borderBottomColor = '';
+    }
+  });
+</script>
+</body>
+</html>
